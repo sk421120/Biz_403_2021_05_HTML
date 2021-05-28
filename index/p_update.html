@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: slateblue;
+        color: snow;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      form {
+        width: 80%;
+        margin: 10px auto;
+      }
+      fieldset {
+        width: 80%;
+        margin: 0 auto;
+        border: 2px dashed slateblue;
+        border-radius: 15px;
+        padding: 5px;
+        text-align: center;
+      }
+      form div {
+        margin: 0 auto;
+      }
+      form label,
+      form input,
+      form button {
+        display: inline-block;
+        padding: 5px 3rem;
+        margin: 5px 2rem;
+      }
+
+      form label {
+        margin: 5px auto;
+      }
+
+      form label {
+        width: 30%;
+        text-align: right;
+      }
+
+      form input {
+        width: 40%;
+        border: 1px solid gray;
+        border-radius: 7px;
+      }
+
+      form button {
+        background-color: rgb(192, 255, 176);
+        margin-top: 1rem;
+        outline: 0;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TO DO List</h1>
+    <form class="update" method="POST">
+      <fieldset>
+        <div>
+          <label>작성일자</label>
+          <input name="td_date" type="date" value="${TD.td_date }" />
+        </div>
+        <div>
+          <label>작성시각</label>
+          <input name="td_time" type="time" value="${TD.td_time }" />
+        </div>
+        <div>
+          <label>할일</label>
+          <input name="td_do" value="${TD.td_do }" />
+        </div>
+        <div>
+          <label>장소</label>
+          <input name="td_place" value="${TD.td_place }" />
+        </div>
+        <div>
+          <button class="btn_submit">입력</button>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

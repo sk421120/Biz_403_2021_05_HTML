@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        background-color: slateblue;
+        color: snow;
+        text-align: center;
+        padding: 1.5rem;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 90%;
+        margin: 10px auto;
+      }
+
+      td,
+      th {
+        border: 1px solid midnightblue;
+        padding: 5px;
+        text-align: center;
+      }
+
+      th {
+        background-color: rgb(255, 247, 255);
+      }
+
+      div {
+        text-align: center;
+      }
+
+      button {
+        padding: 5px 2rem;
+        border: 0;
+        border-radius: 5px;
+        outline: 0;
+        margin: 2px;
+      }
+
+      button:hover {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+
+      button.btn_home {
+        background-color: rgb(199, 192, 243);
+      }
+
+      button.btn_update {
+        background-color: rgb(245, 216, 245);
+      }
+
+      button.btn_delete {
+        background-color: rgb(197, 229, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TO DO List</h1>
+    <table>
+      <tr>
+        <th>작성일자</th>
+        <td>2020-02-02</td>
+        <th>작성시각</th>
+        <td>00시00분</td>
+      </tr>
+      <tr>
+        <th>장소</th>
+        <td colspan="3">테스트</td>
+      </tr>
+      <tr>
+        <th>할일</th>
+        <td colspan="3">테스트1</td>
+      </tr>
+    </table>
+
+    <div class="view_btn">
+      <button class="btn_home">처음으로</button>
+      <button class="btn_update">수정하기</button>
+      <button class="btn_delete">삭제하기</button>
+    </div>
+  </body>
+</html>
