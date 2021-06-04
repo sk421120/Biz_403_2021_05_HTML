@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link href="../reset.css" ref="stylesheet" />
+    <style>
+      div {
+        border: 1px solid sienna;
+      }
+      div.container {
+        /*
+          container box에 display를 flex로 선언하면 내부의 box들은 flex-item
+          주축
+          교차축
+        */
+        display: flex;
+        border: 1px solid greenyellow;
+        padding: 5px;
+        height: 200px;
+      }
+
+      div.container div {
+        height: 100px;
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
