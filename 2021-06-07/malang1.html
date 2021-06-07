@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      #slideWrap {
+        width: 100%;
+        height: 150px;
+        border: 5px solid black;
+        overflow: hidden;
+        position: relative;
+      }
+      #slider {
+        height: 100%;
+        background-color: yellow;
+        position: absolute;
+      }
+      #slider ul {
+        display: inline;
+      }
+      #slider li {
+        float: left;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script>
+      //자동 스크롤 애니메이션
+      var ul = document.querySelector("#slider");
+      var slideNumber = document.querySelector("#slider").childElementCount;
+      var li = document.querySelector("#slider>li");
+
+      var firstItemClone = ul.firstElementChild.cloneNode(true);
+      ul.appendChild(firstItemClone);
+      ul.style.width = (slideNumber + 1) * 100 + "%";
+
+      function move() {
+        var i = 0;
+
+        setInterval(function () {
+          ul.style.transition = "0.5s";
+          ul.style.transform = "translateX(-'+100*(i+1)+'%)";
+
+          i++;
+
+          if (i == slideNumber) {
+            setTimeout(function () {
+              ul.style.transition = "0s";
+              ul.style.transform = "translateX(0px)";
+            }, 201);
+            i = 0;
+          }
+        }, 3000);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        move();
+      });
+    </script>
+  </head>
+  <body>
+    <div id="slideWrap">
+      <div id="header1">좌우 슬라이딩</div>
+      <div id="slider">
+        <ul>
+          <li>
+            <a href="#"
+              ><img src="../HTML_030_image/images_1.jpg" alt="슬라이드1"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="../HTML_030_image/images_3.jpg" alt="슬라이드2"
+            /></a>
+          </li>
+          <li>
+            <a href="#"
+              ><img src="../HTML_030_image/images_2.jpg" alt="슬라이드3"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

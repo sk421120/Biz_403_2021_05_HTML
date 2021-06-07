@@ -1,0 +1,37 @@
+nav#main_nav {
+  background-color: seashell;
+  display: flex;
+  color: rgb(0, 128, 128);
+  /* 화면의 특정한 위치에 강제 고정하기 */
+  /* top, left, right, bottom 이용하여 고정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+nav#main_nav h1 {
+  color: mediumseagreen;
+  font-size: 40px;
+  font-weight: 900;
+  padding: 12px 5px 5px 5px;
+}
+nav#main_nav ul {
+  /* container를 flex로 하고 child의 margin-left auto로 하면
+      flex box내에서 오른쪽 정렬 */
+  display: flex;
+  margin-left: auto;
+}
+nav#main_nav li {
+  padding: 22px 15px 20px 15px;
+  cursor: pointer;
+}
+nav#main_nav li.active {
+  border-bottom: 3px solid black;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+nav#main_nav li:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
