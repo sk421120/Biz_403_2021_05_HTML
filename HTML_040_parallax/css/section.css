@@ -53,17 +53,3 @@ article#art5 {
 article#art6 {
   background: url("../images/images_1.jpg") no-repeat;
 }
-
-@media screen and(max-width:1000px) {
-  section#contents {
-    /* width: */
-    font-size: 40px;
-  }
-}
-
-@media screen and(max-width:800px) {
-  section#contents {
-    /* width: */
-    font-size: 80px;
-  }
-}

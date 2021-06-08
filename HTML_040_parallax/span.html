@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Span Tag</title>
+    <style>
+      /*
+        문장내에 있는 text에 style을 지정하고자 할때 주로 사용하는 tag
+        span tag 자체로는 아무런 효과나 모야이 보이지 않는다
+      */
+      span {
+        font-weight: bold;
+        border: 1px solid tan;
+      }
+      span.box {
+        display: inline-block;
+        width: 300px;
+      }
+      span.hidden {
+        visibility: hidden;
+        width: 0vh;
+      }
+
+      p.visible:hover span.hidden {
+        visibility: visible;
+        width: 100px;
+        transition: 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <p>웰시코기 영어로는 <span>welsh corgi</span></p>
+    <p>웰시코기 영어로는 <span class="box">welsh corgi</span>so cute!</p>
+    <p class="visible">
+      웰시코기 영어로는 <span class="box hidden">welsh corgi</span>so cute!
+    </p>
+
+    <p>웰시코기 영어로는 <strong>welsh corgi</strong></p>
+
+    <p>웰시코기 영어로는 <b>welsh corgi</b></p>
+    <p>웰시코기 영어로는 <em>welsh corgi</em></p>
+    <p>웰시코기 영어로는 <del>welsh corgi</del></p>
+    <p>웰시코기 영어로는 <small>welsh corgi</small></p>
+    <p>웰시코기 영어로는 <ins>welsh corgi</ins></p>
+
+    <p>
+      웰시코기 영어로는 <span>welsh <sup>corgi</sup></span>
+    </p>
+    <p>
+      웰시코기 영어로는 <span>welsh <sub>corgi</sub></span>
+    </p>
+    <p>웰시코기 영어로는 <mark>welsh corgi</mark></p>
+  </body>
+</html>

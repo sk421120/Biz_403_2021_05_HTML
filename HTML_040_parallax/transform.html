@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transform</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+      }
+      div.box1 {
+        /* container를 flex로 하고 */
+        display: flex;
+        /* flex-item이 균등하게 배치 */
+        justify-content: space-around;
+      }
+      div.box1 div {
+        width: 100px;
+        height: 100px;
+        /* background: antiquewhite; */
+        /*          45도 회전    /  x축 -25, y축 -15 기울이기*/
+        transform: rotate(45deg) skew(-15deg, -15deg);
+        border-radius: 5px;
+        position: relative;
+      }
+      div.blue {
+        background-color: cornflowerblue;
+      }
+      div.red {
+        background-color: darkred;
+      }
+      div.green {
+        background-color: darkseagreen;
+      }
+
+      /* parent childs : parent에 포함된 모든 childs */
+      /* pa > chs : pa에 포함된 직계자손만 선택 */
+
+      /* 
+      transform
+      box 도형의 회전, 기울기, 위치 등을 조절하여 단순 사각형 모양이 아닌 기하학적 모양을 만드는 속성
+
+      translate(x,y)
+      translateX()  /   translateY()
+      객체를 이동하는 속성
+
+      rotate() 객체를 회전하는 속성
+      양수 > CW 방향(시계)
+      음수 > CCW 방향(반시계)
+
+      scale(x,y) : x축, y축으로 양수만큼 늘리기 / 음수만큼 줄이기
+
+      skew(x,y) : x축, y축으로 기울기
+      */
+      div.box1 > div > div {
+        /* 부모 박스와 같은 모양으로 변형 */
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 3px solid bisque;
+        transform: skew(0, 0);
+      }
+      div.box1 div div:nth-child(1) {
+        opacity: 0.8;
+      }
+      div.box1 div div:nth-child(2) {
+        opacity: 0.6;
+      }
+
+      div.box1 > div:hover {
+        transform: rotate(45deg) skew(-15deg, -15deg) translate(-15px, 15px);
+      }
+
+      div.box1 > div:hover > div:nth-child(1) {
+        transform: translate(10px, 10px);
+      }
+      div.box1 > div:hover > div:nth-child(2) {
+        transform: translate(-10px, -10px);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>TransForm</h1>
+    <div class="box1">
+      <div class="blue">
+        <div class="blue"></div>
+        <div class="blue"></div>
+      </div>
+      <div class="red">
+        <div class="red"></div>
+        <div class="red"></div>
+      </div>
+      <div class="green">
+        <div class="green"></div>
+        <div class="green"></div>
+      </div>
+    </div>
+    <style>
+      p {
+        border-left: 7px solid black;
+      }
+    </style>
+    <p>힝</p>
+  </body>
+</html>

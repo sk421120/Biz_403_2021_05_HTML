@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA(Single Page App)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        list-style: none;
+      }
+    </style>
+    <link href="css/section.css" rel="stylesheet" />
+    <link href="css/dot_nav.css" rel="stylesheet" />
+    <link href="css/main_nav.css" rel="stylesheet" />
+    <link href="css/media_nav.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c3834cbadf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/main_nav.js"></script>
+  </head>
+  <body>
+    <nav id="main_nav">
+      <h1>나는야 개발자</h1>
+      <div>
+        <div class="menu_togle"><i class="fas fa-bars"></i></div>
+        <ul>
+          <li class="art1 active">귀여워</li>
+          <li class="art2">코기는</li>
+          <li class="art3">멍멍멍</li>
+          <li class="art4">영어로</li>
+          <li class="art5">귀엽지</li>
+          <li class="art6">크니깐</li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="dot_nav">
+      <ul>
+        <li class="art1 active"><span>귀여워</span></li>
+        <li class="art2"><span>코기는</span></li>
+        <li class="art3"><span>멍멍멍</span></li>
+        <li class="art4"><span>영어로</span></li>
+        <li class="art5"><span>귀엽지</span></li>
+        <li class="art6"><span>크니깐</span></li>
+      </ul>
+    </nav>
+    <section id="contents">
+      <article id="art1">웰시코기</article>
+      <article id="art2">귀여워</article>
+      <article id="art3">중형견</article>
+      <article id="art4">Welsh Corgi</article>
+      <article id="art5">So cute!</article>
+      <article id="art6">왕크왕귀</article>
+    </section>
+  </body>
+</html>

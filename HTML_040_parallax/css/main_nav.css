@@ -17,6 +17,11 @@ nav#main_nav h1 {
   font-weight: 900;
   padding: 12px 5px 5px 5px;
 }
+
+nav#main_nav div {
+  margin-left: auto;
+}
+
 nav#main_nav ul {
   /* container를 flex로 하고 child의 margin-left auto로 하면
       flex box내에서 오른쪽 정렬 */
@@ -34,4 +39,18 @@ nav#main_nav li.active {
 
 nav#main_nav li:hover {
   background-color: rgba(0, 0, 0, 0.25);
+}
+
+nav#main_nav div.menu_togle {
+  width: 100%;
+  padding: 22px;
+  text-align: right;
+  color: mediumseagreen;
+  font-size: 20px;
+  display: none;
+}
+
+nav#main_nav ul.drop {
+  visibility: visible;
+  height: 400vh;
 }
