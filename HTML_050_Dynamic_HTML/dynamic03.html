@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    const datas = [
+      ["이름", "전화번호", "주소"],
+      ["홍길동", "1234", "아늑한 집"],
+      ["이몽룡", "5678", "가고싶은집"],
+      ["성춘향", "9012", "편안한 집"],
+    ];
+    let table = document.createElement("table");
+
+    for (let i = 0; i < datas.length; i++) {
+      let tr = document.createElement("tr");
+      for (let j = 0; j < datas[i].length; j++) {
+        let td = document.createElement("td");
+        td.innerHTML = datas[i][j];
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+
+    let body = document.querySelector("body");
+    body.appendChild(table);
+    //   document.querySelector("body").appendChild(table);
+  </script>
+</html>
