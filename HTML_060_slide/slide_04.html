@@ -18,13 +18,15 @@
         transition: 1s;
       }
 
-      /* 실제 전체이미지는 여러개의 이미지가 나열되어 상당히 width가 큰 상태이다
-      이미지 리스트중에서 mask box만큼만 보여주도록 하기 위하여 mask box의 overflow */
       div.images img {
         width: 500px;
         height: 500px;
       }
 
+      /* 실제 전체이미지는 여러개의 이미지가 나열되어 상당히 width가 큰 상태이다
+      이미지 리스트중에서 mask box만큼만 보여주도록 하기 위하여 mask box의 overflow를 hidden을 하였다
+      
+      실제 보여지는 1개의 이미지의 크기는 mask box의 width, height라고 봐도 된다*/
       div.mask {
         width: 500px;
         height: 500px;
@@ -58,7 +60,7 @@
         opacity: 1;
       }
       article.nav div:hover {
-        color: blue;
+        color: linen;
         cursor: pointer;
       }
     </style>
@@ -67,45 +69,52 @@
         const image = document.querySelector("div.images");
         // 이미지 개개별로 모두 가져오기
         // images는 img tag들 정보를 담는 배열이 생성
-        const images = document.querySelector("div.images img");
+        const images = document.querySelectorAll("div.images img");
         const IMAGE_COUNT = images.length;
         const IMAGE_WIDTH = 500;
         let position = 0;
 
         const prev = () => {
-          // 맨 처음 이미지가 화면에 보이고 있을때
+          // 현재 보이는 이미지가 맨 오른쪽 끝 이미지인지 위치값을 검사하여
+          // IMAGE_WIDTH * IMAGE_COUNT 는 전체 이미지의 가로 폭이된다
+          // IMAGE_WIDTH * (IMAGE_COUNT - 1) 제일 마지막 이미지의 왼쪽 라인의 좌표가 된다
+          // 그 좌표에 -1을 곱하여 현재 position의 값과 비교해 본다
+          console.log(position);
           if (position <= IMAGE_WIDTH * ((IMAGE_COUNT - 1) * -1)) {
-            position += IMAGE_WIDTH;
+            position = IMAGE_WIDTH;
           }
           // 이미지(mask box)의 width만큼 position값을 감소시키기
           position += IMAGE_WIDTH * -1;
+
+          // margin-left를 -로 설정하여 이미지 왼쪽으로 이동
           // margin-left는 JS는 camel case로 사용
-          console.log(position);
+          // 중간의 -를 제거하고 - 다음 글자를 대문자로
           //   images.style.marginLeft = position + "px";
 
-          //   margin-left를 이동하는 것보다 CSS3에서는 transform을 사용하자
-          //   images.style.transform = "translateX(" + position "px)";
-          //   JS에서는 문자열+문자열 ... 등의 연산 대신에 Backtit 을 사용하여 문자열 완성연산을 수행하자
+          // margin-left를 이동하는 것보다 CSS3에서는 transform을 사용하자
+          // images.style.transform = "translateX(" + position "px)";
+          // JS에서는 문자열+문자열 ... 등의 연산 대신에 Backtit 을 사용하여 문자열 완성연산을 수행하자
           image.style.transform = `translateX(${position}px)`;
         };
 
         const next = () => {
-          if (position <= 0) {
-            position = IMAGE_WIDTH * (IMAGE_COUNT - 1);
+          console.log(position);
+          if (position >= 0) {
+            position = IMAGE_WIDTH * IMAGE_COUNT * -1;
           }
-          position += IMAGE_WIDTH * -1;
+          position += IMAGE_WIDTH;
+          console.log("nex", position);
           image.style.transform = `translateX(${position}px)`;
         };
 
         document.querySelector("article.nav").addEventListener("click", (e) => {
           let text = e.target.innerHTML;
-          //   if (text === "<" || text === "&lt") {
-          if (text === "left") {
-            //   alert("앞으로");
+          if (text === "<" || text === "&lt;") {
             prev();
-          } else if (text === "right") {
-            //   alert("뒤로");
+            // next();
+          } else if (text === ">" || text === "&gt;") {
             next();
+            // prev();
           }
         });
       });
@@ -123,8 +132,8 @@
         </div>
       </div>
       <article class="nav">
-        <div>left</div>
-        <div>right</div>
+        <div>&lt;</div>
+        <div>&gt;</div>
       </article>
     </section>
   </body>
