@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      /* style reset */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        border: 0;
+      }
+
+      /* HTML tag를 그릴대 width는 화면의 가로폭이
+      어떤 값으로 정해져 있기 때문에 퍼센트를 설정이 가능햇다
+      
+      height값은 기준값이 매우 애매해서 높이를 100%로 설정해도
+      box의 height값이 100%로 설정되지 않는 현상이 있다
+      
+      html tag의 height를 속성을 100%로 설정해 두고
+      기타 tag들의 height을 100%로 설정을 했다
+      HTML5d의 규격에 의해 meta name에 viewport라는 개념이 추가되면서
+      height 100%를 매우 쉽게 구현할수있게 되었다 */
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+      }
+
+      header {
+        background-color: antiquewhite;
+        color: blueviolet;
+        font-size: 30px;
+        font-weight: 700;
+        text-align: center;
+        padding: 2rem;
+      }
+      nav {
+        background-color: burlywood;
+        color: white;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+      }
+
+      nav li {
+        padding: 12px 16px;
+        transition: 0.5s;
+      }
+
+      nav li:first-child {
+        padding-left: 20px;
+      }
+
+      nav li:hover {
+        background-color: beige;
+        color: brown;
+        cursor: pointer;
+      }
+
+      section#main {
+        border: 2px solid violet;
+        font-size: 40px;
+        display: flex;
+        flex: 1;
+        /* overflow: scroll; */
+      }
+
+      section#main aside {
+        width: 300px;
+        padding: 20px;
+      }
+
+      section#main article {
+        flex: auto;
+        border: 1px solid violet;
+        overflow: scroll;
+        height: 60vh;
+        /* CSS의 실험적인 속성 */
+        -ms-overflow-style: none;
+      }
+      section#main article::-webkit-scrollbar {
+        display: none;
+      }
+
+      section#main article p {
+        border: 1px solid gray;
+        background-color: #aaa;
+        height: 50vh;
+      }
+
+      section#ad {
+        height: 100px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: brown;
+        color: white;
+        text-align: center;
+      }
+
+      footer address {
+        padding: 12px;
+      }
+    </style>
+    <script>
+      /* flex를 사용한 full screen layout 만들기
+            한 화면에서만 구성되는 App을 만들때 사용하는 layout
+            
+            body의 width, height 화면의 100%으로 설정하고
+            body의 display를 flex, flex-direction을 column으로 선언
+            
+            본문에 해당하는 flex-item tag에 flex속성을 부여한다
+            이때 속성은1, auto, 100% 중의 1개 값으로 설정한다
+            */
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>페이지의 제목</h1>
+      <p>페이지에 대한 설명</p>
+    </header>
+    <nav>
+      <ul>
+        <li>아 너무 잠온다</li>
+        <li>공지사항</li>
+        <li>메뉴</li>
+      </ul>
+    </nav>
+    <section id="main">
+      <aside class="left">
+        <p>홈</p>
+        <p>공지</p>
+        <p>자유</p>
+      </aside>
+      <article>본문</article>
+      <aside class="right">
+        <h3>실시간</h3>
+        <p>코로나19</p>
+        <p>BTS butter</p>
+        <p>매우 잠옴</p>
+      </aside>
+    </section>
+    <section id="ad">광고에요</section>
+    <footer>
+      <address>COPYRIGHT &copy; email@email.com</address>
+    </footer>
+  </body>
+  <script>
+    for (let i = 0; i < 10; i++) {
+      let ptag = document.createElement("p");
+      ptag.textContent = "코기코기";
+      document.querySelector("section#main article").appendChild(ptag);
+    }
+  </script>
+</html>
