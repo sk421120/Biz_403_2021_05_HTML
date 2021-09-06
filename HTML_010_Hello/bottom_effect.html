@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      div {
+        padding: 2rem;
+        width: 50%;
+        margin: 10px auto;
+        border: 1px solid salmon;
+
+        /* box-shadow를 안쪽으로 펼쳤는데 size 등등이 모두 0이므로 보이지 않는 상태 */
+        box-shadow: 0 0 0 0 white inset;
+        transition: ease-out 0.7s;
+      }
+
+      div:nth-of-type(1):hover {
+        box-shadow: 0 100px 0 0 skyblue inset;
+      }
+
+      div:nth-of-type(2):hover {
+        box-shadow: 200px 0 0 0 wheat inset;
+      }
+
+      div:nth-of-type(3):hover {
+        box-shadow: 400px 100px 0 0 thistle inset;
+      }
+      div:nth-of-type(4):hover {
+        box-shadow: 400px 0 0 0 sandybrown inset, -400px 0 0 0 salmon inset;
+      }
+    </style>
+  </head>
+  <body>
+    <div>말랑</div>
+    <div>몰랑</div>
+    <div>마아아아ㅏㄹ</div>
+    <div>모ㄹㄹ라ㄹ아아아앙</div>
+  </body>
+</html>
