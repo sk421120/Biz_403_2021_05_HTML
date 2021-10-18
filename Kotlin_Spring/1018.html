@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      header,
+      nav.main_nav,
+      table.list {
+        width: 90%;
+        margin: 0 auto;
+      }
+
+      header {
+        background-color: goldenrod;
+        color: white;
+        text-shadow: 2px 1px 2px gold;
+        font-size: 30px;
+        padding: 2rem 0;
+        text-align: center;
+        font-weight: 600;
+      }
+
+      nav.main_nav {
+        padding: 0 5px;
+        background-color: gold;
+        border-radius: 10px;
+      }
+
+      nav.main_nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav.main_nav ul li {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      nav.main_nav ul li:last-child {
+        margin-left: auto;
+      }
+      nav.main_nav ul li:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+
+      table.list {
+        border-collapse: collapse;
+        margin-top: 10px;
+        background-color: seashell;
+        border-top: 2px solid tan;
+        border-bottom: 2px solid tan;
+      }
+      table.list th,
+      table.list td {
+        padding: 10px;
+      }
+
+      table.list td {
+        border-top: 1px solid tan;
+      }
+    </style>
+  </head>
+  <body>
+    <header>나라상사 고객관리 시스템 2021V1</header>
+    <nav class="main_nav">
+      <ul>
+        <li>Home</li>
+        <li>주문관리</li>
+        <li>결제관리</li>
+        <li>Login</li>
+      </ul>
+    </nav>
+    <table class="list">
+      <tr>
+        <th>고객ID</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>주소</th>
+        <th>담당자명</th>
+        <th>담당자연락처</th>
+        <th>매출액합계(만원)</th>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
